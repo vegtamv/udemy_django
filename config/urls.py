@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include # app의 urls.py 연결 위해 import
+from django.http.response import HttpResponse
+from . import views # 프로젝트 레벨의 Views.py import
+
+def home_view (request):
+    return HttpResponse("HOME PAGE")
 
 urlpatterns = [
+    #path('', home_view, name='home'), # 프로젝트 레벨의 urls.py의 home_view 연결
+    path('', views.home_view, name='home'), # 프로젝트 레벨의 views.py의 home_view 연결
     path('my_app/', include('my_app.urls')), # my_app의 urls.py 연결
     path('admin/', admin.site.urls),
 ]
