@@ -1,4 +1,11 @@
-<html lang="en">
+{% extends "base.html" %}
+
+{% block content %}
+<h2> example.html의 Block 안쪽 입니다. </h2>
+{% endblock  %}
+
+
+{% comment %} <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,4 +15,4 @@
     <h1>EXAMPLE HTML CONNECTED</h1>
     <h1><a href="{% url 'my_app:variable' %}">Variable</a></h1>
 </body>
-</html>
+</html> {% endcomment %}
