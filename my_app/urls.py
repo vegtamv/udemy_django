@@ -1,9 +1,12 @@
 from django.urls import path
 from . import views
 
+# app namespace 등록
+app_name = "my_app"
+
 urlpatterns = [
-    path('', views.simple_view), # domain.com/my_app
-    path('variable', views.variable_view)
+    path('', views.simple_view, name='example'), # domain.com/my_app
+    path('variable', views.variable_view, name='variable')
 ]
 
 # urlpatterns = [
