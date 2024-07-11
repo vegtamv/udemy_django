@@ -28,3 +28,5 @@ urlpatterns = [
     path('my_app/', include('my_app.urls')), # my_app의 urls.py 연결
     path('admin/', admin.site.urls),
 ]
+
+handler404 = 'config.views.my_custom_page_not_found_view'
