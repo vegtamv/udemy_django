@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <h2> example.html의 Block 안쪽 입니다. </h2>
+<img src="{% static "my_app/poke.jpg" %}" alt="poke image">
+
 {% endblock  %}
 
 
