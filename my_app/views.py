@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, Http404,  HttpResponseRedirect
 from django.urls import reverse
+from . import models
+#from .models import patient
 
 def simple_view(request):
     return render(request,'my_app/example.html')
@@ -17,6 +19,13 @@ def variable_view(request):
     }
 
     return render(request,'my_app/variable.html', context=my_var)
+
+def list_patient(request):
+
+    all_patients = models.Patient.objects.all()
+    context_dict = {'patients': all_patients}
+
+    return render(request, 'my_app/list.html', context=context_dict)
 
 # articles = {
 #     'sports' : 'Sports Page',

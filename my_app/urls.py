@@ -6,7 +6,8 @@ app_name = "my_app"
 
 urlpatterns = [
     path('', views.simple_view, name='example'), # domain.com/my_app
-    path('variable', views.variable_view, name='variable')
+    path('variable', views.variable_view, name='variable'),
+    path('patient', views.list_patient, name='list_patient')
 ]
 
 # urlpatterns = [
