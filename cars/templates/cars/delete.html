@@ -1,6 +1,19 @@
 {% extends "base_cars.html" %}
 
 {% block content %}
-<h1>DELETE</h1>
+<div class='container'>
+    <h1>DELETE</h1>
+    <h2>Enter PK to delete car</h2>
+    <form action="" method='POST'>
+        <!-- Django는 POST 요청 시 CSRF 토큰을 사용한다-->
+        {% csrf_token %} 
+        <div class="form-group">
+            <label for="pk">PK Number:</label>
+            <input class='form-control' type="text" id='pk' name='pk'>
+        </div>
+        <br>
+        <input class='btn btn-primary' type="submit">
+    </form>
+</div>
 {% endblock content %}
 
