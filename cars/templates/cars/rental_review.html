@@ -3,13 +3,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RENTAL REVIEW FORM</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+
 </head>
 <body>
-    <h1>RENTAL REVIEW FORM</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit">
-    </form>
+    <h1 style="padding:50px; border-style:solid">RENTAL REVIEW FORM</h1>
+    <div class='container'>
+        <form method="POST">
+            {% csrf_token %}
+            <!--
+            1)
+            {{ form }}
+            2) 
+            {{ form.as_p }}
+            3)
+            {{ form.first_name.label_tag }} {{ form.first_name }}
+            -->
+            {% for field in form %}
+                <div class='mb-3'> 
+                    {{ field.label_tag }} 
+                </div>
+                {{ field }}
+            {% endfor %}
+            
+            <div><br><input class="btn btn-outline-dark" type="submit"></div>
+        </form>
+    </div>
 </body>
 </html>
