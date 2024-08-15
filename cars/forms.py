@@ -8,6 +8,6 @@ class ReviewForm(forms.Form):
                              required=False,
                              widget=forms.Textarea(attrs={
                                  'class':'myform',
-                                 'rows':'2',
-                                 'cols':'6'})
+                                 'rows':'7',
+                                 'cols':'50'})
                              )
