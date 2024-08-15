@@ -9,6 +9,26 @@ class ReviewForm(ModelForm):
         fields = '__all__'	# 모든 필드를 불러온다.
         #fields = ['first_name', 'last_name'] # 불러올 필드를 선택한다.
 
+        labels = {
+            'first_name': "YOUR FIRST NAME",
+            'last_name': "YOUR LAST NAME",
+            'stars': "Rating"
+        }
+
+        error_messages = {
+            'stars': {
+                'min_value':"Min Value is 1",
+                'max_value':"Max Value is 5",
+            }
+        }
+
+        # widgets = {
+        #     'stars': forms.NumberInput(attrs={
+        #         'max': '5',    # For maximum number
+        #         'min': '0',    # For minimum number
+        #     }),
+        # }
+
 ## FORM ##
 # class ReviewForm(forms.Form):
 #     first_name = forms.CharField(label="First Name", max_length=100)

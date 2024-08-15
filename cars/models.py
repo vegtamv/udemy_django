@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class Car(models.Model):
@@ -16,7 +17,7 @@ class CarReview(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=50)
     review = models.CharField(max_length=100) 
-    stars = models.IntegerField(default=3)
+    stars = models.IntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     def __str__(self):
         return f"{self.last_name} {self.first_name}({self.email}): {self.stars} \n{self.review}"
