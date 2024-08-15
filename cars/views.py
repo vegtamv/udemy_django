@@ -39,13 +39,8 @@ def rental_review(request):
         form = ReviewForm(request.POST)
 
         if form.is_valid():
-            data = form.cleaned_data
             print(form.cleaned_data)
-            first_name = data['first_name']
-            last_name = data['last_name']
-            email = data['email']
-            review = data['review']
-            models.CarReview.objects.create(first_name=first_name, last_name=last_name,email=email,review=review)
+            form.save()
             return redirect(reverse('cars:thank_you'))
         
     # Else, Render Form
