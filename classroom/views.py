@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, CreateView
 from .forms import ContactForm
+from .models import Teacher
 
 # Create your views here.
 # def home_view(request):
@@ -12,6 +13,15 @@ class HomeView(TemplateView):
 
 class ThankuView(TemplateView):
     template_name = "classroom/thanku.html" 
+
+class TeacherCreateView(CreateView):
+    # Template = [model]_form.html
+    # Model에 연결
+    model = Teacher 
+    # 표시하려는 속성
+    fields = '__all__'
+    # 성공 후 이동되는 URL
+    success_url = reverse_lazy('classroom:thanku')
 
 class ContactFormView(FormView):
     form_class = ContactForm
