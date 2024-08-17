@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # [앱].[apps.py].[클래스] 의미
     'my_app.apps.MyAppConfig',
     'cars.apps.CarsConfig',
+    'classroom.apps.ClassroomConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

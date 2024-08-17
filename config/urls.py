@@ -27,7 +27,8 @@ urlpatterns = [
     path('', views.home_view, name='home'), # 프로젝트 레벨의 views.py의 home_view 연결
     path('my_app/', include('my_app.urls')), # my_app의 urls.py 연결
     path('cars/', include('cars.urls')), # cars의 urls.py 연결
-    path('admin/', admin.site.urls),
+    path('classroom/', include('classroom.urls')),
+    path('admin/', admin.site.urls)
 ]
 
 handler404 = 'config.views.my_custom_page_not_found_view'
