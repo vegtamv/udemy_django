@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView, ListView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
 from .forms import ContactForm
 from .models import Teacher
 
@@ -42,3 +42,9 @@ class TeacherListView(ListView):
     # Model에 연결
     model = Teacher 
     context_object_name = "teacher_list" # default = object_list
+
+
+class TeacherDetailView(DetailView):
+    # Template = [model]_detail.html
+    # Model에 연결
+    model = Teacher 
