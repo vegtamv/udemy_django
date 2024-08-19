@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView, UpdateView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView, UpdateView, DeleteView
 from .forms import ContactForm
 from .models import Teacher
 
@@ -59,3 +59,8 @@ class TeacherUpdateView(UpdateView):
     # 성공 후 이동되는 URL
     success_url = reverse_lazy('classroom:list_teacher')
 
+class TeacherDeleteView(DeleteView):
+    # Template = [model]_confirm_delete.html
+    # Model에 연결
+    model = Teacher
+    success_url = reverse_lazy('classroom:list_teacher')

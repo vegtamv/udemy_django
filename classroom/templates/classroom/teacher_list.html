@@ -3,7 +3,10 @@
     {% for teacher in teacher_list %}
         <li>
             <a href="/classroom/teacher_detail/{{teacher.id}}">{{teacher.first_name}} {{teacher.last_name}}</a>
-            <a href="/classroom/update_teacher/{{teacher.id}}">Update</a>
+            <ul>
+                <li><a href="/classroom/update_teacher/{{teacher.id}}">Update</a></li>
+                <li><a href="/classroom/delete_teacher/{{teacher.id}}">Delete</a></li>
+            </ul>            
         </li>
     {% endfor %}
 </ul>
